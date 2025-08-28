@@ -5,37 +5,222 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portofolio - Muhammad Reza</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-50 text-slate-800">
+  <style>
+    /* Background gradien luar angkasa */
+    body {
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow-x: hidden;
+    }
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 bg-white shadow">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
-      <div class="flex items-center gap-2">
-        <div class="p-2 bg-indigo-600 text-white rounded-xl">💻</div>
-        <div>
-          <h1 class="font-bold">Muhammad Reza</h1>
-          <p class="text-sm text-slate-500">SMKN 4 Bandung</p>
-        </div>
+    /* Layer bintang 1 */
+    .stars, .stars2, .stars3 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      animation: animStar 100s linear infinite;
+    }
+
+    .stars {
+      box-shadow:
+        1000px 2000px #fff, 1500px 300px #fff, 800px 900px #fff,
+        300px 1500px #fff, 1200px 700px #fff, 400px 1200px #fff,
+        600px 400px #fff, 1700px 1800px #fff, 1300px 1200px #fff;
+      animation-duration: 120s;
+    }
+    .stars::after {
+      content: "";
+      position: absolute;
+      top: 2000px;
+      box-shadow: inherit;
+    }
+
+    /* Layer bintang 2 (lebih rapat) */
+    .stars2 {
+      box-shadow:
+        500px 1000px #fff, 900px 600px #fff, 400px 300px #fff,
+        700px 1400px #fff, 150px 800px #fff, 1800px 1600px #fff,
+        100px 1200px #fff, 1300px 500px #fff, 1600px 900px #fff;
+      animation-duration: 160s;
+    }
+    .stars2::after {
+      content: "";
+      position: absolute;
+      top: 2000px;
+      box-shadow: inherit;
+    }
+
+    /* Layer bintang 3 (sangat rapat, kecil) */
+    .stars3 {
+      box-shadow:
+        200px 400px #fff, 300px 1800px #fff, 1600px 200px #fff,
+        1800px 1000px #fff, 1000px 1500px #fff, 1400px 600px #fff,
+        200px 1200px #fff, 600px 1600px #fff, 900px 1900px #fff;
+      animation-duration: 200s;
+    }
+    .stars3::after {
+      content: "";
+      position: absolute;
+      top: 2000px;
+      box-shadow: inherit;
+    }
+
+    /* Animasi scroll ke atas */
+    @keyframes animStar {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-2000px); }
+    }
+      
+    
+  </style>
+</head>
+<script>
+  // Selalu scroll ke atas saat reload
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+</script>
+
+<body class="relative text-white">
+
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Muhammad Reza</title>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- COVER SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0" style="background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);"></div>
+
+      <!-- Stars Background -->
+      <style>
+        .stars, .stars2, .stars3 { position:absolute; width:1px; height:1px; background:transparent; animation:animStar 120s linear infinite; }
+        .stars  { box-shadow: 1000px 2000px #fff, 1500px 300px #fff, 800px 900px #fff, 300px 1500px #fff, 1200px 700px #fff, 400px 1200px #fff, 600px 400px #fff, 1700px 1800px #fff, 1300px 1200px #fff; animation-duration: 140s; }
+        .stars2 { box-shadow: 500px 1000px #fff, 900px 600px #fff, 400px 300px #fff, 700px 1400px #fff, 150px 800px #fff, 1800px 1600px #fff, 100px 1200px #fff, 1300px 500px #fff, 1600px 900px #fff;  animation-duration: 180s;}
+        .stars3 { box-shadow: 200px 400px #fff, 300px 1800px #fff, 1600px 200px #fff, 1800px 1000px #fff, 1000px 1500px #fff, 1400px 600px #fff, 200px 1200px #fff, 600px 1600px #fff, 900px 1900px #fff;  animation-duration: 220s;}
+        .stars::after, .stars2::after, .stars3::after { content:""; position:absolute; top:2000px; box-shadow:inherit; }
+        @keyframes animStar { from{ transform: translateY(0) } to{ transform: translateY(-2000px) } }
+      </style>
+      <div class="stars absolute inset-0 z-0"></div>
+      <div class="stars2 absolute inset-0 z-0"></div>
+      <div class="stars3 absolute inset-0 z-0"></div>
+
+      <!-- Glow Effect -->
+      <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] rounded-full blur-3xl opacity-40"
+          style="background: conic-gradient(from 180deg at 50% 50%, rgba(99,102,241,.6), rgba(56,189,248,.5), rgba(168,85,247,.5), rgba(99,102,241,.6)); filter: blur(80px);">
       </div>
-      <a href="#contact" class="px-4 py-2 bg-indigo-600 text-white rounded-xl">Hubungi Saya →</a>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur border border-white/10 text-xs mb-6">
+          <span class="text-indigo-300">🚀</span> <span>WELCOME TO MY WEBSITE</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+                  <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-cyan-200 to-fuchsia-300 drop-shadow">
+            Muhammad Reza Habiburrahman
+          </span>
+        </h1>
+           <div class="mt-8 flex items-center justify-center gap-3">
+  <!-- Tombol scroll otomatis ke div proyek -->
+  <a href="#profile"
+     class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition shadow-lg shadow-indigo-600/30">
+    Profile
+  </a>
+  
+  <a href="#contact" 
+     class="px-5 py-3 rounded-xl border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20 transition">
+    Hubungi Saya
+  </a>
+</div>
+
+      <!-- Bottom Glow -->
+      <div class="absolute -bottom-24 -right-24 h-64 w-64 md:h-96 md:w-96 rounded-full bg-gradient-to-tr from-indigo-500/40 to-fuchsia-500/30 blur-2xl"></div>
+    </section>
+
+
+<!-- BACKGROUND SOUND -->
+<audio id="space-audio" loop>
+  <source src="ambient-soundscapes-004-space-atmosphere-303243.mp3">
+  Browser kamu tidak mendukung audio tag.
+</audio>
+
+<!-- BUTTON KONTROL SUARA -->
+<button id="sound-toggle" 
+        class="fixed bottom-4 right-4 bg-indigo-600 text-white p-3 rounded-full shadow-lg">
+  🔇
+</button>
+
+<script>
+  const audio = document.getElementById("space-audio");
+  const btn = document.getElementById("sound-toggle");
+  audio.volume = 0.2;
+
+  // aktifkan audio hanya dengan klik pertama
+  function enableAudio() {
+    audio.play().catch(err => console.log("Autoplay diblokir:", err));
+    document.removeEventListener("click", enableAudio);
+  }
+  document.addEventListener("click", enableAudio);
+
+  // toggle mute/unmute
+  btn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = "🔊";
+    } else {
+      audio.pause();
+      btn.textContent = "🔇";
+    }
+  });
+
+  // selalu scroll ke atas setelah halaman selesai dimuat
+  window.onload = function () {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }, 10);
+  };
+</script>
+
+
+  
+<!-- Layer bintang -->
+<div class="stars absolute inset-0 z-0"></div>
+<div class="stars2 absolute inset-0 z-0"></div>
+<div class="stars3 absolute inset-0 z-0"></div>
+
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full bg-black/50 backdrop-blur-sm z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+    <div class="flex items-center gap-2">
+      <div class="p-2 bg-indigo-600 text-white rounded-xl">💻</div>
+      <div>
+        <h1 class="font-bold text-white">Muhammad Reza</h1>
+        <p class="text-sm text-slate-300">SMKN 4 Bandung</p>
+      </div>
     </div>
-  </header>
+    </a>
+  </div>
+</header>
+
 
   <!-- HERO -->
-  <section class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-6">
-    <div class="md:col-span-2 bg-white rounded-2xl shadow p-6">
+  <section id="profile" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-6 relative z-10">
+    <div class="md:col-span-2 bg-black/50 backdrop-blur rounded-2xl shadow p-6">
       <h2 class="text-3xl font-bold">Halo! Saya Muhammad Reza Habiburrahman</h2>
-      <p class="mt-4 text-slate-600">
+      <p class="mt-4 text-slate-200">
         Siswa SMKN 4 Bandung angkatan ke-26 (2024-2026), yang berfokus kepada pembelajaran pemograman Web & Mobile Development. Berpengalaman membangun sistem skala kecil hingga menengah dengan teknologi modern, Flutter, Laravel, dan REST API.
       </p>
       <div class="mt-6 flex gap-3 flex-wrap">
         <a href="https://github.com/Rezaa8" target="_blank" class="px-4 py-2 border rounded-xl">GitHub</a>
-        <a href="https://www.instagram.com/eeja_8" class="px-4 py-2 bg-indigo-600 text-white rounded-xl">Instagram</a>
       </div>
     </div>
 
-    <div class="bg-white rounded-2xl shadow p-6">
+    <div class="bg-black/50 backdrop-blur rounded-2xl shadow p-6">
       <h3 class="font-semibold mb-3">Stack Utama</h3>
       <ul class="space-y-2 text-sm">
         <li>Laravel / PHP</li>
@@ -46,54 +231,44 @@
   </section>
 
   <!-- SKILLS -->
-  <section class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-6">
-    <div class="bg-white rounded-2xl shadow p-6">
+  <section class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-6 relative z-10">
+    <div class="bg-black/50 backdrop-blur rounded-2xl shadow p-6">
       <h3 class="font-semibold mb-4">Keahlian</h3>
       <ul class="space-y-2 text-sm">
-        <li>Frontend Development (Tailwind) – 90%</li>
+        <li>Frontend Development (Tailwind) – 80%</li>
         <li>Backend Development (Laravel) – 85%</li>
         <li>Database Design (SQL) – 80%</li>
       </ul>
     </div>
 
-    <div class="bg-white rounded-2xl shadow p-6">
+    <div class="bg-black/50 backdrop-blur rounded-2xl shadow p-6">
       <h3 class="font-semibold mb-4">Tools & Teknologi</h3>
       <div class="flex flex-wrap gap-2 text-sm">
-        <span class="px-2 py-1 bg-slate-100 rounded-xl">GitHub</span>
-        <span class="px-2 py-1 bg-slate-100 rounded-xl">Postman</span>
-        <span class="px-2 py-1 bg-slate-100 rounded-xl">VSCode</span>
-        <span class="px-2 py-1 bg-slate-100 rounded-xl">Android Studio</span>
+        <span class="px-2 py-1 bg-white/20 rounded-xl">GitHub</span>
+        <span class="px-2 py-1 bg-white/20 rounded-xl">Postman</span>
+        <span class="px-2 py-1 bg-white/20 rounded-xl">VSCode</span>
+        <span class="px-2 py-1 bg-white/20 rounded-xl">Android Studio</span>
       </div>
     </div>
   </section>
 
-  </section>
-
   <!-- PROJECTS -->
-  <section class="max-w-6xl mx-auto px-4 py-12">
+<section id="projects" class="max-w-6xl mx-auto px-4 py-12">
   <h3 class="font-semibold mb-6">Proyek</h3>
   <div class="grid md:grid-cols-3 gap-6">
     <!-- Card Proyek -->
-    <div class="bg-white rounded-2xl shadow p-6">
-      <!-- Tambahkan gambar -->
-      <img src="Screenshot 2025-05-14 102828.png" 
-           alt="proyek" 
-           class="rounded-xl mb-4">
-
+    <div class="bg-black/50 backdrop-blur rounded-2xl shadow p-6">
+      <img src="Screenshot 2025-05-14 102828.png" alt="proyek" class="rounded-xl mb-4">
       <h4 class="font-semibold">E-Commerce Platform</h4>
       <p class="text-sm text-slate-500">2025 · Web</p>
       <ul class="list-disc ml-5 text-sm mt-2">
         <li>Menggunakan Neatbeans dengan bahasa pemograman Java</li>
       </ul>
     </div>
-  
-      <div class="bg-white rounded-2xl shadow p-6">
-        <img src="Screenshot 2025-08-23 143715.png" 
-     alt="proyek"
-     class="w-40 h-auto rounded-lg">
-
-        <h4 class="font-semibold">Aplikasi sistem parkir</h4>
-        <p class="text-sm text-slate-500">2025 · Mobile</p>
+      <div class="bg-black/50 backdrop-blur rounded-2xl shadow p-6">
+        <img src="Screenshot 2025-08-23 143715.png" alt="proyek" class="w-40 h-auto rounded-lg mb-4">
+        <h4 class="font-semibold">Aplikasi Sistem Parkir</h4>
+        <p class="text-sm text-slate-300">2025 · Mobile</p>
         <ul class="list-disc ml-5 text-sm mt-2">
           <li>Menggunakan framework Flutter menggunakan bahasa dart</li>
         </ul>
@@ -102,21 +277,22 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="max-w-6xl mx-auto px-4 py-12">
-    <div class="bg-white rounded-2xl shadow p-6 text-center">
+  <section id="contact" class="max-w-6xl mx-auto px-4 py-12 relative z-10">
+    <div class="bg-black/50 backdrop-blur rounded-2xl shadow p-6 text-center">
       <h3 class="font-semibold mb-2">Tertarik bekerja sama?</h3>
-      <p class="text-slate-600 mb-4">Hubungi saya via Email atau WhatsApp</p>
+      <p class="text-slate-200 mb-4">Hubungi saya via Email atau Instagram</p>
       <div class="flex justify-center gap-3">
         <a href="mailto:rezaaa8880@gmail.com" class="px-4 py-2 bg-indigo-600 text-white rounded-xl">Email</a>
-        <a href="https://wa.me/qr/LB3ZOKHOL2CWA1" target="_blank" class="px-4 py-2 border rounded-xl">WhatsApp</a>
+        <a href="https://www.instagram.com/eeja_8" class="px-4 py-2 bg-indigo-600 text-white rounded-xl">Instagram</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="text-center py-6 text-sm text-slate-500">
-    © 2025 Muhammad Reza
+  <footer class="text-center py-6 text-sm text-slate-400 relative z-10">
+    © 2025 Muhammad Reza 🚀✨
   </footer>
+  
 
 </body>
 </html>
