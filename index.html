@@ -70,8 +70,16 @@
       from { transform: translateY(0px); }
       to { transform: translateY(-2000px); }
     }
-      
-    
+
+    .tilt {
+  animation: planetTilt 15s ease-in-out infinite alternate;
+}
+
+@keyframes planetTilt {
+  from { transform: perspective(1000px) rotateX(15deg) rotateY(5deg) scale(1.1); }
+  to   { transform: perspective(1000px) rotateX(25deg) rotateY(-5deg) scale(1.1); }
+}
+     
   </style>
 </head>
 <script>
@@ -92,51 +100,38 @@
 </head>
 <body class="bg-gray-900 text-white">
 
-    <!-- COVER SECTION -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0" style="background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);"></div>
+   <!-- COVER -->
+<section id="cover" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
 
-      <!-- Stars Background -->
-      <style>
-        .stars, .stars2, .stars3 { position:absolute; width:1px; height:1px; background:transparent; animation:animStar 120s linear infinite; }
-        .stars  { box-shadow: 1000px 2000px #fff, 1500px 300px #fff, 800px 900px #fff, 300px 1500px #fff, 1200px 700px #fff, 400px 1200px #fff, 600px 400px #fff, 1700px 1800px #fff, 1300px 1200px #fff; animation-duration: 140s; }
-        .stars2 { box-shadow: 500px 1000px #fff, 900px 600px #fff, 400px 300px #fff, 700px 1400px #fff, 150px 800px #fff, 1800px 1600px #fff, 100px 1200px #fff, 1300px 500px #fff, 1600px 900px #fff;  animation-duration: 180s;}
-        .stars3 { box-shadow: 200px 400px #fff, 300px 1800px #fff, 1600px 200px #fff, 1800px 1000px #fff, 1000px 1500px #fff, 1400px 600px #fff, 200px 1200px #fff, 600px 1600px #fff, 900px 1900px #fff;  animation-duration: 220s;}
-        .stars::after, .stars2::after, .stars3::after { content:""; position:absolute; top:2000px; box-shadow:inherit; }
-        @keyframes animStar { from{ transform: translateY(0) } to{ transform: translateY(-2000px) } }
-      </style>
-      <div class="stars absolute inset-0 z-0"></div>
-      <div class="stars2 absolute inset-0 z-0"></div>
-      <div class="stars3 absolute inset-0 z-0"></div>
-
-      <!-- Glow Effect -->
-      <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] rounded-full blur-3xl opacity-40"
-          style="background: conic-gradient(from 180deg at 50% 50%, rgba(99,102,241,.6), rgba(56,189,248,.5), rgba(168,85,247,.5), rgba(99,102,241,.6)); filter: blur(80px);">
-      </div>
-
-      <!-- Content -->
-      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur border border-white/10 text-xs mb-6">
-          <span class="text-indigo-300">🚀</span> <span>WELCOME TO MY WEBSITE</span>
-        </div>
-
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
-                  <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-cyan-200 to-fuchsia-300 drop-shadow">
-            Muhammad Reza Habiburrahman
-          </span>
-        </h1>
-           <div class="mt-8 flex items-center justify-center gap-3">
-  <!-- Tombol scroll otomatis ke div proyek -->
-  <a href="#profile"
-     class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition shadow-lg shadow-indigo-600/30">
-    Profile
-  </a>
-  
-  <a href="#contact" 
-     class="px-5 py-3 rounded-xl border border-white/30 bg-white/10 backdrop-blur hover:bg-white/20 transition">
-    Hubungi Saya
-  </a>
+<!-- Background Video Bumi -->
+<div class="absolute inset-0 -z-10 overflow-hidden bg-black">
+  <video autoplay loop muted playsinline
+         class="w-full h-full object-cover bg-video">
+    <source src="bumi.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video tag.
+  </video>
+  <!-- Overlay gelap biar teks tetap jelas -->
+  <div class="absolute inset-0 bg-black/50"></div>
 </div>
+
+
+  <!-- Lapisan Bintang -->
+  <div class="stars absolute inset-0 z-0"></div>
+  <div class="stars2 absolute inset-0 z-0"></div>
+  <div class="stars3 absolute inset-0 z-0"></div>
+
+  <!-- Konten Hero -->
+  <div class="relative z-10">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Muhammad Reza 🚀</h1>
+    <p class="text-lg md:text-2xl text-slate-200">Software Engineer | Web & Mobile Developer</p>
+    <div class="mt-6 flex justify-center gap-4">
+      <a href="#profile" class="px-6 py-3 bg-indigo-600 rounded-xl shadow hover:bg-indigo-700 transition">Tentang Saya</a>
+      <a href="#contact" class="px-6 py-3 bg-slate-800 rounded-xl shadow hover:bg-slate-700 transition">Contact</a>
+    </div>
+  </div>
+</section>
+
+  
 
       <!-- Bottom Glow -->
       <div class="absolute -bottom-24 -right-24 h-64 w-64 md:h-96 md:w-96 rounded-full bg-gradient-to-tr from-indigo-500/40 to-fuchsia-500/30 blur-2xl"></div>
